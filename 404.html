@@ -7,13 +7,15 @@
 </head>
 <body>
   <script type="text/javascript">
-    // Redirect to index.html while preserving the path, search, and hash
     (function() {
-      var path = window.location.pathname;
-      var search = window.location.search;
-      var hash = window.location.hash;
-      var newUrl = window.location.origin + "/spike-ai.github.io/index.html?" + path + search + hash;
-      window.location.replace(newUrl);
+      // Ensure we only redirect once to avoid loops
+      if (window.location.search.indexOf('redirected=true') === -1) {
+        var path = window.location.pathname;
+        var search = window.location.search ? window.location.search + '&redirected=true' : '?redirected=true';
+        var hash = window.location.hash;
+        var newUrl = window.location.origin + '/spike-ai.github.io' + path + search + hash;
+        window.location.replace(newUrl);
+      }
     })();
   </script>
 </body>
