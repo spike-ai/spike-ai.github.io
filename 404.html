@@ -3,13 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page Not Found</title>
+    <title>Redirecting...</title>
   </head>
   <body>
     <script type="text/javascript">
       // Redirect all requests to index.html
       var redirect = function () {
-        window.location.href = '/index.html?' + window.location.pathname;
+        var path = window.location.pathname;
+        var search = window.location.search;
+        var hash = window.location.hash;
+        window.location.href = '/index.html?' + path + search + hash;
       };
       redirect();
     </script>

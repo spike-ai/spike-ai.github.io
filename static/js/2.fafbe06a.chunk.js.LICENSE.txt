@@ -23,8 +23,6 @@ object-assign
 *
 */
 
-/*! smooth-scroll v16.1.3 | (c) 2020 Chris Ferdinandi | MIT License | http://github.com/cferdinandi/smooth-scroll */
-
 /**
  * @remix-run/router v1.16.1
  *
