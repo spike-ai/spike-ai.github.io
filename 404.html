@@ -8,12 +8,13 @@
 <body>
   <script type="text/javascript">
     (function() {
-      // Ensure we only redirect once to avoid loops
-      if (window.location.search.indexOf('redirected=true') === -1) {
-        var path = window.location.pathname;
-        var search = window.location.search ? window.location.search + '&redirected=true' : '?redirected=true';
-        var hash = window.location.hash;
-        var newUrl = window.location.origin + '/spike-ai.github.io' + path + search + hash;
+      // Check if the URL already contains the redirected flag to avoid loops
+      if (!window.location.search.includes('redirected=true')) {
+        // Extract the current path and query parameters
+        var path = window.location.pathname + window.location.search + window.location.hash;
+        // Construct the new URL with the redirected flag
+        var newUrl = window.location.origin + "/spike-ai.github.io" + path + (window.location.search ? '&' : '?') + 'redirected=true';
+        // Redirect to the new URL
         window.location.replace(newUrl);
       }
     })();
