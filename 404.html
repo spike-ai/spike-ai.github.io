@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Redirecting...</title>
-  </head>
-  <body>
-    <script type="text/javascript">
-      // Redirect to the index.html
-      (function() {
-        var path = window.location.pathname;
-        var search = window.location.search;
-        var hash = window.location.hash;
-        var newUrl = window.location.origin + window.location.pathname.replace('/404.html', '') + '/index.html?' + path + search + hash;
-        window.location.replace(newUrl);
-      })();
-    </script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirecting...</title>
+</head>
+<body>
+  <script type="text/javascript">
+    // Redirect to index.html while preserving the path, search, and hash
+    (function() {
+      var path = window.location.pathname;
+      var search = window.location.search;
+      var hash = window.location.hash;
+      var newUrl = window.location.origin + "/spike-ai.github.io/index.html?" + path + search + hash;
+      window.location.replace(newUrl);
+    })();
+  </script>
+</body>
 </html>
