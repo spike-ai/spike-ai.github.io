@@ -8,19 +8,13 @@
   <body>
     <script type="text/javascript">
       // Redirect to the index.html
-      var redirect = function () {
-        // Get the path and query string
+      (function() {
         var path = window.location.pathname;
         var search = window.location.search;
         var hash = window.location.hash;
-
-        // Construct the new URL
-        var newUrl = window.location.origin + process.env.PUBLIC_URL + '/index.html?' + path + search + hash;
-
-        // Redirect to the new URL
+        var newUrl = window.location.origin + window.location.pathname.replace('/404.html', '') + '/index.html?' + path + search + hash;
         window.location.replace(newUrl);
-      };
-      redirect();
+      })();
     </script>
   </body>
 </html>
