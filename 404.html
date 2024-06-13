@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirecting...</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // Redirect to the index.html
+      var redirect = function () {
+        // Get the path and query string
+        var path = window.location.pathname;
+        var search = window.location.search;
+        var hash = window.location.hash;
+
+        // Construct the new URL
+        var newUrl = window.location.origin + process.env.PUBLIC_URL + '/index.html?' + path + search + hash;
+
+        // Redirect to the new URL
+        window.location.replace(newUrl);
+      };
+      redirect();
+    </script>
+  </body>
+</html>
